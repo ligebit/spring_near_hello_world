@@ -2,5 +2,6 @@ node_modules
 package-lock.json
 .parcel-cache
 neardev
+dist
 contracts/target
 contracts/Cargo.lock

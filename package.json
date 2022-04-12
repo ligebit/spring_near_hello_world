@@ -5,6 +5,7 @@
     "scripts": {
         "build-run": "parcel src/index.html",
         "build-client": "parcel build src/index.html",
+        "gh-pages": "gh-pages -d dist",
         "build-contract": "cd contracts && cargo build --target wasm32-unknown-unknown --release",
         "deploy-contract": "npm run build-contract && near dev-deploy --wasmFile contracts/target/wasm32-unknown-unknown/release/spring_near_hello_world.wasm"
     },

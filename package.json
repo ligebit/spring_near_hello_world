@@ -3,8 +3,8 @@
     "version": "1.0.0",
     "description": "",
     "scripts": {
-        "build-run": "parcel src/index.html",
-        "build-client": "parcel build src/index.html --public-url /",
+        "build-run-client": "parcel src/index.html",
+        "build-client": "parcel build src/index.html --public-url .",
         "build-contract": "cd contracts && cargo build --target wasm32-unknown-unknown --release",
         "deploy-contract": "npm run build-contract && near dev-deploy --wasmFile contracts/target/wasm32-unknown-unknown/release/spring_near_hello_world.wasm"
     },

@@ -78,9 +78,11 @@ function setRobotMessage(message) {
 
     robot_message.interval = setInterval(() => {
         if(message.length <= i) {
+            robot_message.innerHTML = robot_message.innerHTML.substring(0, robot_message.innerHTML.length - 1);
             clearInterval(robot_message?.interval)
         } else {
-            robot_message.innerHTML += message[i];
+            robot_message.innerHTML = robot_message.innerHTML.substring(0, robot_message.innerHTML.length - 1);
+            robot_message.innerHTML += message[i] + '|';
             i++;
         }
     }, 50);

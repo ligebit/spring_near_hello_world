@@ -9,8 +9,8 @@ module.exports = class ROBOT_ANIMATION {
         const eyeImage = await ROBOT_ANIMATION.addImageProcess(require('./eye.png'));
         this.robot = await ROBOT_ANIMATION.addImageProcess(require('./robot.png'));
 
-        this.rightEye = new EYE(this.ctx, 95, 93, eyeImage);
-        this.leftEye = new EYE(this.ctx, 163, 93, eyeImage);
+        this.rightEye = new EYE(this.ctx, 155, 80, eyeImage);
+        this.leftEye = new EYE(this.ctx, 210, 80, eyeImage);
 
         this.isLoaded = true;
     }
@@ -24,7 +24,7 @@ module.exports = class ROBOT_ANIMATION {
         if(this.isLoaded) {
             this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-            this.ctx.drawImage(this?.robot, 0, 0, 300, 365);
+            this.ctx.drawImage(this?.robot, 0, 0, 400, 400);
             this.rightEye.draw(this.ctx);
             this.leftEye.draw(this.ctx);
         }
@@ -44,7 +44,7 @@ module.exports = class ROBOT_ANIMATION {
 
 
 
-const EYE_SIZE = 46;
+const EYE_SIZE = 36;
 
 class EYE {
     constructor(ctx, eyeX, eyeY, image) {

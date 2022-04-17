@@ -72,17 +72,19 @@ function signedInFlow() {
 function setRobotMessage(message) {
     const robot_message = document.getElementById('robot_message');
 
+    robot_message.classList.remove('border_animation');
+    robot_message.classList.add('border_r');
     let i = 0;
     robot_message.innerHTML = '';
     clearInterval(robot_message?.interval)
 
     robot_message.interval = setInterval(() => {
         if(message.length <= i) {
-            robot_message.innerHTML = robot_message.innerHTML.substring(0, robot_message.innerHTML.length - 1);
             clearInterval(robot_message?.interval)
+            robot_message.classList.add('border_animation');
+            robot_message.classList.remove('border_r');
         } else {
-            robot_message.innerHTML = robot_message.innerHTML.substring(0, robot_message.innerHTML.length - 1);
-            robot_message.innerHTML += message[i] + '|';
+            robot_message.innerHTML += message[i];
             i++;
         }
     }, 50);
